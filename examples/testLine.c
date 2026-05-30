@@ -1,6 +1,6 @@
 #include "../turtlec.h"
 
-void ajedrez(Turtle *t,int len, int count );
+void fractalTree(Turtle *t,float len, int count );
 int main(void){
   TurtleApp *app = turtleAppCreate(400, 300, "Test Line");
 
@@ -16,7 +16,7 @@ int main(void){
   turtleSetColor(t, 255, 100, 0);
   turtleSetSpeed(t, 5.0f);
   //turtleForward(t, 300.0f);
-  ajedrez(t, 200.0, 4);
+  fractalTree(t, 200.0, 3);
   turtleAppRun(app);
   turtleAppDestroy(app);
   return 0;
@@ -64,11 +64,14 @@ void serpiente(Turtle *t, int len ,int count){
  serpiente( t, len - 10, count - 1);
 
 }
-void ajedrez(Turtle *t,int len, int count){
- if (count == 0) {
-  turtleForward(t, len);
-  return;
- }
- ajedrez(t, len, count - 1);
- turtleRight(t, 90.0);
-}
+void Tree ( Turtle * turtle , float len , int level ) {
+ if( level == 0 || len < 5)
+ return ;
+ turtleForward(t, len);
+ turtleLeft(t, 30.0);
+ Tree(t, len / 2,level - 1);
+ turtleBackward(t, len);
+ turtleRight(t, 60.0);
+ Tree(t, len / 2,level - 1);
+ turtleBackward(t, len);
+
