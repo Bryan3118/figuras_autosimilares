@@ -70,8 +70,8 @@ void Tree ( Turtle * t, float len , int level ) {
  turtleForward(t, len);
  turtleLeft(t, 30.0);
  Tree(t, len / 2,level - 1);
- turtleBackward(t, len);
  turtleRight(t, 60.0);
  Tree(t, len / 2,level - 1);
+ turtleLeft(t, 30.0);
  turtleBackward(t, len);
 }
