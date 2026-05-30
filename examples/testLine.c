@@ -65,15 +65,16 @@ void serpiente(Turtle *t, int len ,int count){
 
 }
 void Tree ( Turtle * t, float len , int level ) {
- if( len < 5)
+ if( level == 0 || len < 5){
+ turtleForward(t, len);
+ turtleBackward(t, len); 
  return ;
- if( level != 0){
+ }
  turtleForward(t, len);
  turtleLeft(t, 30.0);
- Tree(t, len / 2, level);}
- turtleBackward(t, len);
+ Tree(t, len / 2, level - 1);
  turtleRight(t, 60.0);
- Tree(t, len / 2, level);
+ Tree(t, len / 2, level - 1);
  turtleLeft(t, 30.0);
  turtleBackward(t, len);
 }
