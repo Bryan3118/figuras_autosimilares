@@ -122,14 +122,13 @@ void ramas(Turtle *t, float len, int level){
  }
  turtleForward(t, len);
  turtleLeft(t, 30.0);
- ramas(t, len / 2, level - 1);
- int count = 1;
- turtleRight(t, 90.0);
- ramas(t, len + len / 2,level - 1);
+ int val = 1;
+ if (val == 1) 
+   ramas(t, len / 2, level - 1);
+ turtleRight(t, 60.0);
+ val = 2;
+ if (val == 2) 
+   ramas(t, (len / 2 )+ 20,level - 1);
  turtleLeft(t, 30.0);
- int count = 2;
- if (cunt == 1)
  turtleBackward(t, len);
- else 
- turtleBackward(t, len + len / 2);
 }
