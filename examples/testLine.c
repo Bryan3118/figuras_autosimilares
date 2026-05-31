@@ -145,7 +145,8 @@ void tree3(Turtle *t, float len, int level){
  tree3(t, len / 2, level - 1);
  turtleRight(t, 30.0);
  tree3(t, len / 2, level - 1);
- turtleLeft(t, 30.0);
+ turtleRight(t, 30.0);
  tree3(t, len / 2, level - 1);
+ turtleLeft(t, 30.0);
  turtleBackward(t ,len); 
 }
