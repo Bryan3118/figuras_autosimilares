@@ -2,6 +2,7 @@
 
 void Tree2(Turtle *t,float len, int level );
 void curva(Turtle *t, float len, int level );
+void ramas(Turtle *t, float len, int level );
 int main(void){
   TurtleApp *app = turtleAppCreate(400, 300, "Test Line");
 
@@ -18,7 +19,8 @@ int main(void){
   turtleSetSpeed(t, 5.0f);
   //turtleForward(t, 300.0f);
   //Tree2(t, 100.0, 5);
-  curva(t, 200.0, 3);
+  //curva(t, 200.0, 2);
+  ramas(t, 200.0, 3);
   turtleAppRun(app);
   turtleAppDestroy(app);
   return 0;
@@ -111,5 +113,23 @@ void curva(Turtle *t, float len, int level){
  turtleRight(t, 90.0);
  curva(t, len / 2, level - 1);
  turtleLeft(t, 45.0);
-
+}
+void ramas(Turtle *t, float len, int level){
+ if( level == 0 || len < 5){
+  turtleForward(t, len);
+  turtleBackward(t, len);
+  return ;
+ }
+ turtleForward(t, len);
+ turtleLeft(t, 30.0);
+ ramas(t, len / 2, level - 1);
+ int count = 1;
+ turtleRight(t, 90.0);
+ ramas(t, len + len / 2,level - 1);
+ turtleLeft(t, 30.0);
+ int count = 2;
+ if (cunt == 1)
+ turtleBackward(t, len);
+ else 
+ turtleBackward(t, len + len / 2);
 }
