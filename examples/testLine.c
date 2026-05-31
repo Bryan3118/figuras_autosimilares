@@ -1,5 +1,6 @@
 #include "../turtlec.h"
 
+void Tree(Turtle *t, float len, int level);
 void Tree2(Turtle *t,float len, int level );
 void curva(Turtle *t, float len, int level );
 void ramas(Turtle *t, float len, int level );
@@ -19,9 +20,10 @@ int main(void){
   turtleSetColor(t, 255, 100, 0);
   turtleSetSpeed(t, 5.0f);
   //turtleForward(t, 300.0f);
-  //Tree2(t, 100.0, 5);
-  //curva(t, 200.0, 2);
-  //ramas(t, 200.0, 3);
+  //Tree(t, 100.0, 3); 
+  //Tree2(t, 100.0, 4);
+  //curva(t, 200.0, 3);
+  //ramas(t, 100.0, 3);
   tree3(t, 100, 3);
   turtleAppRun(app);
   turtleAppDestroy(app);
@@ -91,7 +93,7 @@ void Tree2 ( Turtle * t, float len , int level ) {
  turtleBackward(t, len); 
  return ;
  }
- if (level == 5)
+ if (level == 4)
   turtleSetColor ( t, 200.0 , 12.0 , 0.0) ; 
  else
   turtleSetColor ( t, 0.0 , 200.0 , 0.0) ;
@@ -102,7 +104,7 @@ void Tree2 ( Turtle * t, float len , int level ) {
  Tree2(t, len * 0.6, level - 1);
  turtleLeft(t, 20.0);
  turtleBackward(t, len);
- if (level == 4)
+ if (level == 3)
   turtleSetColor ( t, 200.0 , 12.0 , 0.0) ;  
 }
 void curva(Turtle *t, float len, int level){
